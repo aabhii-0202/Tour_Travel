@@ -1,13 +1,13 @@
 public class findDistance {
     private float[] distance;
     private final float[][] cost = tourandTravel.cost ;
-    private int nodes,dest;
+    private int dest;
     private final String[] names = tourandTravel.cities;
 
     public void find(int src,int dest){
-        this.nodes=names.length;
+        int nodes = names.length;
         this.dest=dest;
-        this.distance=new float[nodes+1];
+        this.distance=new float[nodes +1];
         compute(nodes,src);
     }
 
@@ -36,8 +36,7 @@ public class findDistance {
                     this.distance[u]=this.distance[minpos]+this.cost[minpos][u];
             }
         }
-        for(i=1;i<nodes;i++)
-            if(i==dest) System.out.println("Distance calculated = "+names[src]+"-->"+names[i]+" Distance = "+distance[i]+"km");
+        System.out.println("Distance calculated = "+names[src]+"-->"+names[dest]+" Distance = "+distance[dest]+"km");
     }
 }
 
